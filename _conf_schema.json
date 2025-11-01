@@ -1,0 +1,20 @@
+{
+  "session_based": {
+    "description": "启用会话隔离",
+    "type": "bool",
+    "default": false,
+    "hint": "启用后，AI在不同会话（群聊/私聊）中对同一用户的状态将独立计算"
+  },
+  "context_prompt_template": {
+    "description": "当前状态提示词模板",
+    "type": "string",
+    "default": "[当前状态] 你与该用户的关系是：{relationship}，好感度为 {favour}，你对他的印象是：{attitude}。",
+    "hint": "用于告知AI当前状态的模板。可用变量: {relationship}, {favour}, {attitude}"
+  },
+  "instruction_prompt_template": {
+    "description": "机密指令提示词模板",
+    "type": "string",
+    "default": "[当前状态] 你与该用户的关系是：{relationship}，好感度为 {favour}，你对他的印象是：{attitude}。",
+    "hint": "指导AI如何更新和保密其内心状态的核心指令。这是一个非常重要的提示词，请谨慎修改。"
+  }
+}
