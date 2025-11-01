@@ -133,7 +133,7 @@ class FavourProPlugin(Star):
 
         req.system_prompt += f"\n{context_prompt}\n{instruction_prompt}"
 
-    @filter.on_llm_response(priority=1000)
+    @filter.on_llm_response(priority=50)
     async def on_llm_resp(self, event: AstrMessageEvent, resp: LLMResponse):
         """
         处理LLM响应，解析并更新状态，然后清理特殊标记 (最终鲁棒版)
